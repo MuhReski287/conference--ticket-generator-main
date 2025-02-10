@@ -1,0 +1,280 @@
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('assets/fonts/static/Inconsolata-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inconsolata-Medium';
+  src: url('assets/fonts/static/Inconsolata-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inconsolata-Bold';
+  src: url('assets/fonts/static/Inconsolata-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inconsolata-ExtraBold';
+  src: url('assets/fonts/static/Inconsolata-ExtraBold.ttf');
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+body{
+    background-image: url(assets/images/pattern-lines.svg), url(assets/images/pattern-circle.svg), url(assets/images/pattern-circle.svg), url(assets/images/pattern-squiggly-line-bottom-desktop.svg), url(assets/images/pattern-squiggly-line-top.svg), url(assets/images/background-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover, 150px, 150px, auto, 40%, cover;
+    background-position: center, 50px -70px, 75% 75%, left bottom, top right, center;
+    background-attachment: fixed;
+    color: hsl(0, 0%, 100%);
+    font-family: 'Inconsolata';
+    font-size: 1.25rem;
+    
+}
+
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px;  
+  
+}
+
+h1{
+  font-family: 'Inconsolata-ExtraBold';
+}
+
+h2{
+  font-family: 'Inconsolata-Bold';
+}
+
+.header{
+  text-align: center;
+}
+.header p{
+  font-size: 1rem;
+}
+
+.form-data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.form-data span{
+  font-size: .8rem;
+}
+
+.input-data{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px;
+}
+
+input{
+  border-radius: 5px;
+  height: 35px;
+  border: 2px solid hsl(0, 0%, 100%);
+  background-color: hsla(0, 0%, 100%, 0.05);
+  color: hsl(0, 0%, 100%); 
+}
+
+.drag-image{
+  border: 2px dashed hsl(0, 0%, 100%);
+  border-radius: 10px;
+  background-color: hsla(0, 0%, 100%, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.drag-image img{
+  background-color: hsl(245, 19%, 35%);
+  border-radius: 5px;
+  padding: 5px;  
+}
+
+.drag-image input{
+  display: none;
+}
+
+#buttonGenerate{
+  background-color: hsl(7, 71%, 60%);
+  border: none;
+  color: black;
+  font-family: 'Inconsolata-Bold';
+}
+
+.form-data{
+  
+}
+
+.generate-tickets{
+  display: none;
+}
+
+.generate-tickets .header{
+  margin-bottom: 100px;
+}
+
+.ticket{
+  width: 450px;
+  height: 200px;
+  /* border: 2px solid aliceblue; */
+  background-image: url(assets/images/pattern-ticket.svg);
+  background-repeat: no-repeat;
+  background-size: 455px 210px;
+  background-position: center;
+  padding: 5px 25px;
+  margin: 5px auto;
+  position: relative;
+  
+}
+
+.header-ticket{
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.tittle-ticket p{
+  font-size: 1rem;
+
+}
+
+.tittle-ticket img{
+  border-radius: 10px;
+  width: 25px;
+  
+}
+
+.main-ticket{
+  display: flex;
+  gap: 20px;
+}
+
+.main-ticket img{
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.main-ticket p{
+  font-family: 'Inconsolata-Medium';
+  font-size: 1rem;
+}
+
+.footer-ticket{
+  transform: rotate(90deg);
+  position: absolute;
+  right: 0px;
+  top: 75px;
+}
+
+#codeTicket{
+  font-family: 'Inconsolata-Medium' ;
+  font-size: 2rem;
+  color: hsl(245, 15%, 58%);
+}
+
+@media (max-width: 700px) {
+  body{
+    background-image: url(assets/images/pattern-lines.svg), url(assets/images/pattern-circle.svg), url(assets/images/pattern-circle.svg), url(assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg), url(assets/images/pattern-squiggly-line-top.svg), url(assets/images/background-tablet.png);
+    background-size: cover, 150px, 150px, 50%, 40%, cover;
+  }
+}
+
+@media (max-width: 375px) {
+  body{
+    background-image: url(assets/images/pattern-lines.svg), url(assets/images/pattern-circle.svg), url(assets/images/pattern-circle.svg), url(assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg), url(assets/images/pattern-squiggly-line-top.svg), url(assets/images/background-mobile.png);
+    background-size: cover, 150px, 150px, 50%, 40%, cover;  
+  }
+}
