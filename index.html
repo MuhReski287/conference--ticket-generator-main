@@ -45,13 +45,15 @@
         <form action="#">
           <div class="input-data">
             <label for="inputImage"> Upload Avatar </label>
-            <div class="drag-image" f>
+            <input type="file" id="inputImage" />
+            <label class="drag-image" for="inputImage">
               <label for="inputImage">
                 <img src="assets/images/icon-upload.svg" alt="" />
               </label>
-              <input type="file" id="inputImage" />
-              <label for="">Drag and drop or click to upload</label>
-            </div>
+              
+              <div id="previewImage"></div>
+              <span>Drag and drop or click to upload</span>
+            </label>
             <span id="note"> <i class='fas fa-exclamation-circle'></i> Upload your photo (JPG or PNG, max size: 500KB).</span>
           </div>
 
@@ -62,12 +64,12 @@
 
           <div class="input-data">
             <label for="inputEmail">Email Address</label>
-            <input type="text" id="inputEmail" name="email" placeholder="example@email.com" />
+            <input type="text" id="inputEmail" name="email" placeholder="example@email.com" required/>
           </div>
 
           <div class="input-data">
             <label for="inputGithubUsername">GitHub Username</label>
-            <input type="text" id="inputGithubUsername" placeholder="@yourusername" />
+            <input type="text" id="inputGithubUsername" placeholder="@yourusername" required/>
           </div>
 
           <div class="input-data">

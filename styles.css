@@ -164,8 +164,10 @@ input{
   color: hsl(0, 0%, 100%); 
 }
 
+
+
 .drag-image{
-  border: 2px dashed hsl(0, 0%, 100%);
+  border: 1px dashed hsl(0, 0%, 100%);
   border-radius: 10px;
   background-color: hsla(0, 0%, 100%, 0.05);
   display: flex;
@@ -175,14 +177,35 @@ input{
   padding: 20px;
 }
 
+input:hover{
+  background-color: hsl(245, 19%, 35%);
+}
+
+input:focus{
+  border: 5px double hsl(252, 6%, 83%);
+  border-radius: 10px;
+}
+
+.drag-image:hover{
+  background-color: hsl(245, 19%, 35%);
+}
+
+
+
+
 .drag-image img{
   background-color: hsl(245, 19%, 35%);
   border-radius: 5px;
   padding: 5px;  
 }
 
-.drag-image input{
+.drag-image span{
+  font-size: 1.25rem;
+}
+
+#inputImage{
   display: none;
+ 
 }
 
 #buttonGenerate{
@@ -278,3 +301,4 @@ input{
     background-size: cover, 150px, 150px, 50%, 40%, cover;  
   }
 }
+
