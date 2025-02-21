@@ -187,14 +187,14 @@ input:focus{
 }
 
 .drag-image:hover{
-  background-color: hsl(245, 19%, 35%);
+  background-color: hsl(245, 15%, 58%);
 }
 
 
 
 
 .drag-image img{
-  background-color: hsl(245, 19%, 35%);
+  background-color: hsl(245, 15%, 58%);
   border-radius: 5px;
   padding: 5px;  
 }
@@ -206,6 +206,32 @@ input:focus{
 #inputImage{
   display: none;
  
+}
+
+#preview{
+  display: none;
+  
+}
+
+#previewImage{
+  width: 100px;
+  border-radius: 10px;
+  margin: auto;
+    
+}
+
+#btnImg button{
+  width: max-content;
+  background-color: hsl(245, 19%, 35%);
+  color: hsl(0, 0%, 100%);
+  border-style: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#noteEmail{
+  display: none;
+  color: hsl(7, 86%, 67%);
 }
 
 #buttonGenerate{
