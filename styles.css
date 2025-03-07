@@ -246,7 +246,7 @@ input:focus{
 }
 
 .generate-tickets{
-  
+  /* display: none; */
   
   
 }
@@ -259,6 +259,7 @@ input:focus{
   background: linear-gradient(to right, hsl(7, 86%, 67%),  hsl(0, 0%, 100%));
   -webkit-background-clip: text;
   color: transparent;
+  text-transform: capitalize;
 }
 
 #email{
@@ -268,7 +269,6 @@ input:focus{
 .ticket{
   width: 450px;
   height: 200px;
-  /* border: 2px solid aliceblue; */
   background-image: url(assets/images/pattern-ticket.svg);
   background-repeat: no-repeat;
   background-size: 430px 210px;
@@ -276,7 +276,7 @@ input:focus{
   padding: 5px 25px;
   margin: 15px auto;
   position: relative;
-      
+  
 }
 
 .header-ticket{

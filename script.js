@@ -7,7 +7,8 @@ inputImg.addEventListener('change', upload);
 
 function upload(){
     const maxFile = 500 * 1024;
-
+    
+    // validation maximum file
     if(inputImg.files[0].size > maxFile){
         const alert = document.getElementById('note');
         alert.innerHTML = " <i class='fas fa-exclamation-circle'></i>  File too big. Please upload a photo under 500KB.";
@@ -17,6 +18,7 @@ function upload(){
         return;
     }
 
+    // view image
     if (inputImg.files && inputImg.files[0]){
         const file = inputImg.files[0];
         const reader = new FileReader();
@@ -78,6 +80,8 @@ document.getElementById('inputEmail').addEventListener('blur', function(){
     }
 });
 
+
+// button generate ticket
 document.getElementById('buttonGenerate').addEventListener('click', function(){
     const inputImage = document.getElementById('inputImage').files[0];
     const inputName = document.getElementById('inputName').value;
@@ -97,6 +101,16 @@ document.getElementById('buttonGenerate').addEventListener('click', function(){
         document.getElementById('name').innerText = inputName;
         document.getElementById('email').innerText = inputEmail;
         document.getElementById('gitHub').innerText = inputGitHub;
+        const image = document.getElementById('image');
+
+        const reader = new FileReader();
+
+        reader.addEventListener('load', function(){
+            image.src = reader.result;
+        });
+
+        reader.readAsDataURL(inputImage);
+
         
     }
     
