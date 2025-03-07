@@ -1,17 +1,11 @@
-// const inputImage = document.getElementById('inputImage');
-// if(inputImage.files.length > 0){
-//     const imgValue = inputImage.value;
-//     const previewImage = document.getElementById('previewImage');
-//     const img = document.createElement('img');
-//     img.setAttribute('src', 'imgValue');
-//     previewImage.append(img);
-// }
+const inputImg = document.getElementById('inputImage');
+const preview = document.getElementById('preview');
+const previewImage = document.getElementById('previewImage');
+const dropArea = document.getElementById('dropArea');
+ 
+inputImg.addEventListener('change', upload);
 
-document.getElementById('inputImage').addEventListener('change', function(){
-    const inputImg = document.getElementById('inputImage');
-    const preview = document.getElementById('preview');
-    const previewImage = document.getElementById('previewImage');
-
+function upload(){
     const maxFile = 500 * 1024;
 
     if(inputImg.files[0].size > maxFile){
@@ -34,9 +28,21 @@ document.getElementById('inputImage').addEventListener('change', function(){
         reader.readAsDataURL(file);
                 
     }
-});
+}
+
+dropArea.addEventListener('dragover', function(event){
+    event.preventDefault();
+} );
+
+dropArea.addEventListener('drop', function(event){
+    event.preventDefault();
+    inputImg.files = event.dataTransfer.files;
+    upload();
+} );
 
 
+
+// remove image review
 function removeImg(){
     const inputImage = document.getElementById('inputImage');
     const previewImage = document.getElementById('previewImage');
@@ -45,6 +51,8 @@ function removeImg(){
     
 }
 
+
+// change image review
 function changeImg(){
     const inputImage = document.getElementById('inputImage');
     const previewImage = document.getElementById('previewImage');
@@ -54,21 +62,44 @@ function changeImg(){
     inputImage.click();
 }
 
-
-
-
-
-document.getElementById('inputEmail').addEventListener('mouseout', function(){
+// Email validation
+document.getElementById('inputEmail').addEventListener('blur', function(){
     const noteEmail = document.getElementById('noteEmail');
+    let inputEmail = document.getElementById('inputEmail').value;
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if(document.getElementById('inputEmail').value ===''){
-        noteEmail.style.display = 'inline';   
-        document.getElementById('inputEmail').style.borderColor = 'hsl(7, 86%, 67%)';   
-
-    }else{
+    if(regex.test(inputEmail)){
         noteEmail.style.display = 'none'; 
         document.getElementById('inputEmail').style.borderColor = 'hsl(252, 6%, 83%)';  
+
+    }else{
+        noteEmail.style.display = 'inline';   
+        document.getElementById('inputEmail').style.borderColor = 'hsl(7, 86%, 67%)'; 
     }
+});
+
+document.getElementById('buttonGenerate').addEventListener('click', function(){
+    const inputImage = document.getElementById('inputImage').files[0];
+    const inputName = document.getElementById('inputName').value;
+    const inputEmail = document.getElementById('inputEmail').value;
+    const inputGitHub = document.getElementById('inputGithubUsername').value;
+
+    const formInput = document.getElementById('formData');
+    const ticket = document.getElementById('generateTickets');
+
+    if (inputName == '' || inputEmail == '' || inputGitHub == '' || inputImage == ''){
+        alert('Fill in all forms');
+    }else{
+        formInput.style.display = 'none';
+        ticket.style.display = 'block';
+
+        document.getElementById('fullName').innerText = inputName;
+        document.getElementById('name').innerText = inputName;
+        document.getElementById('email').innerText = inputEmail;
+        document.getElementById('gitHub').innerText = inputGitHub;
+        
+    }
+    
 });
 
 

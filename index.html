@@ -36,7 +36,7 @@
     </header>
 
     <main>
-      <div class="form-data">
+      <div class="form-data" id="formData">
         <div class="header">
           <h1>Your Journey to Coding <br>Conf 2025 Starts Here!</h1>
           <p>Secure your spot at next year's biggest coding conference.</p>
@@ -46,7 +46,7 @@
           <div class="input-data">
             <label for="inputImage"> Upload Avatar </label>
             <input type="file" id="inputImage" accept="image/*" />
-            <label class="drag-image" for="inputImage" id="dragArea">
+            <label class="drag-image" for="inputImage" id="dropArea">
               <label for="inputImage">
                 <img src="assets/images/icon-upload.svg" alt="" />
               </label>
@@ -82,7 +82,7 @@
           </div>
 
           <div class="input-data">
-            <input type="submit" value="Generate My Ticket" id="buttonGenerate" />
+            <input type="button" value="Generate My Ticket" id="buttonGenerate" />
           </div>
         </form>
       </div>
@@ -91,12 +91,12 @@
 
 
       <!-- Generated tickets starts -->
-      <div class="generate-tickets">
+      <div class="generate-tickets" id="generateTickets">
         <div class="header">
-          <h1>Congrats, <span id="fullName"></span>! <br>Your ticket is ready.</h1>
+          <h1>Congrats, <span id="fullName">Jonaathann</span>! <br>Your ticket is ready.</h1>
           <p>
             We've emailed your ticket to<br>
-            <span id="email"><!-- Email Address --></span> and will send updates
+            <span id="email">example@mail.com<!-- Email Address --></span> and will send updates
             in the run up to the event.
           </p>
         </div>
@@ -105,16 +105,19 @@
           <div class="header-ticket">
             <img src="assets/images/logo-mark.svg" alt="" />
             <div class="tittle-ticket">
-              <h2>Coding Conf</h2>
+              <h3>Coding Conf</h3>
               <p>Jan 31, 2025 / Austin, TX</p>
             </div>
           </div>
 
           <div class="main-ticket">
-            <img src="assets/images/image-avatar.jpg" alt="" />
+            <img src="assets/images/image-avatar.jpg" id="image" alt="" />
             <div class="ticket-data">
-              <h4>Jonathan Krisof</h4>
-              <p><i class="fa-brands fa-square-github"></i><span>@JonathanKristoff0101</span></p>
+              <p id="name">Jonathan Krisof</p>
+              <div class="acountGithub">
+                <img src="assets/images/icon-github.svg" alt="">
+                <span id="gitHub">@JonathanKristoff0101</span>
+              </div>
             </div>
           </div>
           <div class="footer-ticket">

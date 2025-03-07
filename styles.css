@@ -139,7 +139,7 @@ h2{
 }
 
 .form-data{
-  display: flex;
+  /* display: none; */
   flex-direction: column;
   align-items: center;
   gap: 30px;
@@ -246,11 +246,23 @@ input:focus{
 }
 
 .generate-tickets{
-  display: none;
+  
+  
+  
 }
 
 .generate-tickets .header{
   margin-bottom: 100px;
+}
+
+#fullName{
+  background: linear-gradient(to right, hsl(7, 86%, 67%),  hsl(0, 0%, 100%));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#email{
+  color: hsl(7, 88%, 67%);
 }
 
 .ticket{
@@ -259,22 +271,28 @@ input:focus{
   /* border: 2px solid aliceblue; */
   background-image: url(assets/images/pattern-ticket.svg);
   background-repeat: no-repeat;
-  background-size: 455px 210px;
+  background-size: 430px 210px;
   background-position: center;
   padding: 5px 25px;
-  margin: 5px auto;
+  margin: 15px auto;
   position: relative;
-  
+      
 }
 
 .header-ticket{
   display: flex;
   justify-content: flex-start;
   gap: 10px;
+  padding-bottom: 20px;
+}
+
+#fullname{
+  text-transform: capitalize;
 }
 
 .tittle-ticket p{
-  font-size: 1rem;
+  font-size: .8rem;
+  color: hsl(245, 15%, 58%);
 
 }
 
@@ -289,15 +307,34 @@ input:focus{
   gap: 20px;
 }
 
-.main-ticket img{
-  width: 75px;
-  height: 75px;
+#image{
+  width: 60px;
+  height: 60px;
   border-radius: 10px;
   margin-top: 15px;
 }
 
-.main-ticket p{
+
+.ticket-data img{
+  width: 20px;  
+}
+
+.acountGithub{
+  display: flex;
+  gap: 5px;
+  
+}
+
+#name{
+  font-family: 'Inconsolata';
+  font-size: 1.35rem;
+  color: hsl(0, 0%, 100%);
+  text-transform: capitalize;
+}
+
+.main-ticket{
   font-family: 'Inconsolata-Medium';
+  color: hsl(252, 6%, 83%);
   font-size: 1rem;
 }
 
